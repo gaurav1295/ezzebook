@@ -9,10 +9,14 @@ var http = require('http'),
     errorhandler = require('errorhandler'),
     mongoose = require('mongoose');
 
+
+
 var isProduction = process.env.NODE_ENV === 'production';
+
 
 // Create global app object
 var app = express();
+
 
 app.use(cors());
 // Normal express config defaults
@@ -22,7 +26,7 @@ app.use(bodyParser.json());
 
 app.use(require('method-override')());
 app.use(express.static(__dirname + '/public'));
-// "test": "echo \"Error: no test specified\" && exit 1"
+
 app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
 if (!isProduction) {
@@ -51,6 +55,7 @@ app.use(function(req, res, next) {
 });
 
 /// error handlers
+
 
 // development error handler
 // will print stacktrace
