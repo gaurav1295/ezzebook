@@ -34,9 +34,9 @@ if (!isProduction) {
 }
 
 if (isProduction) {
-    mongoose.connect(process.env.MONGODB_URI);
+    mongoose.connect("mongodb://gaurav:gaurav.rock@ds151461.mlab.com:51461/ezzebook");
 } else {
-    mongoose.connect('mongodb://localhost/Ezzebook');
+    mongoose.connect('mongodb://gaurav:gaurav.rock@ds151461.mlab.com:51461/ezzebook');
     mongoose.set('debug', true);
 }
 
